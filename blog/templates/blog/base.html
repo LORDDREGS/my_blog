@@ -1,0 +1,34 @@
+<!-- blog/templates/blog/base.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Блог</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/styles.css' %}"> <!-- Добавьте свой CSS-файл, если он есть -->
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'home' %}">Мой Блог</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li><a href="{% url 'post-create' %}">Создать пост</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <!-- Здесь будут вставлены все другие шаблоны -->
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Мой Блог</p>
+    </footer>
+</body>
+</html>
+
+
+
+
